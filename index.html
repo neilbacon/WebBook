@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barrington Tops — A Visual Journey</title>
+  <meta name="description" content="An interactive 3D web photo book showcasing the pristine landscapes and Gondwana rainforests of Barrington Tops National Park.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Audio Elements -->
+  <audio id="ambient-audio" loop>
+    <source src="https://assets.mixkit.co/active_storage/sfx/2458/2458-84.wav" type="audio/wav">
+  </audio>
+
+  <!-- Ambient background glow -->
+  <div class="bg-glow"></div>
+
+  <!-- Background Ambiance Controls (Float Top Right) -->
+  <div class="top-bar">
+    <div class="brand">
+      <span class="brand-title">Barrington Tops</span>
+      <span class="brand-separator">|</span>
+      <span class="brand-subtitle">A Visual Journey</span>
+    </div>
+    <div class="top-controls">
+      <button id="sound-btn" class="icon-btn" title="Toggle Page Flip Sound">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+      </button>
+      <button id="fullscreen-btn" class="icon-btn" title="Toggle Fullscreen">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <main class="viewport">
+    <div class="book-wrapper">
+      <div id="book" class="book">
+        
+        <!-- SHEET 0: COVER & INTRO -->
+        <div class="sheet" id="sheet-0">
+          <div class="page-face front cover-face">
+            <div class="cover-pattern"></div>
+            <div class="cover-content">
+              <div class="cover-tag">PHOTOGRAPHY COLLECTION</div>
+              <h1 class="cover-title">BARRINGTON TOPS</h1>
+              <div class="cover-divider"></div>
+              <p class="cover-subtitle">A Visual Journey</p>
+              <div class="cover-author">BY NEIL BACON</div>
+              <div class="cover-emboss"></div>
+            </div>
+            <div class="page-edge-highlight"></div>
+          </div>
+          <div class="page-face back intro-face">
+            <div class="page-content text-page">
+              <span class="chapter-number">CHAPTER I</span>
+              <h2 class="page-title">The Barrington Wilderness</h2>
+              <div class="title-underline"></div>
+              <p class="intro-p">
+                Rising high above the Hunter Valley in New South Wales, Australia, <strong>Barrington Tops National Park</strong> is a sanctuary of breathtaking diversity. It forms a crucial link in the World Heritage-listed Gondwana Rainforests, protecting ecological systems that have persisted for millions of years.
+              </p>
+              <p class="intro-p">
+                This photographic journey explores the park's contrasting landscapes, moving from the mist-shrouded wetlands of <em>Polblue Swamp</em> at 1,500 meters altitude, through ancient temperate rainforests of giant Antarctic Beech, and outward to the majestic volcanic lookouts.
+              </p>
+              <p class="intro-p">
+                Each page captures a moment in this alpine wilderness, documenting a fragile yet resilient ecosystem where moisture, altitude, and isolation shape a unique botanical world.
+              </p>
+              <div class="intro-footer">
+                <span class="leaf-icon">✿</span>
+              </div>
+              <div class="page-number">1</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHEET 1: PHOTO 1 & PHOTO 2 -->
+        <div class="sheet" id="sheet-1">
+          <div class="page-face front">
+            <div class="page-content photo-page">
+              <div class="photo-frame landscape-frame">
+                <img src="images/DSC_5072.webp" alt="Polblue Swamp Walk" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Polblue Swamp Walk</h3>
+                <p class="meta">March 21, 2026 — 2:53 PM • NIKON Z 6_2</p>
+                <p class="desc">A quiet, elevated boardwalk winds through the subalpine peat swamp, bordered by unique sphagnum moss and frost-tolerant eucalypts.</p>
+              </div>
+              <div class="page-number">2</div>
+            </div>
+          </div>
+          <div class="page-face back">
+            <div class="page-content photo-page">
+              <div class="photo-frame landscape-frame">
+                <img src="images/DSC_5129.webp" alt="Evening Light, Barrington" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Evening Light, Barrington</h3>
+                <p class="meta">March 22, 2026 — 7:21 PM • NIKON Z 6_2</p>
+                <p class="desc">The soft golden hues of sunset filter through the high forest canopy, casting long shadows across the ferns.</p>
+              </div>
+              <div class="page-number">3</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHEET 2: PHOTO 3 & PHOTO 4 -->
+        <div class="sheet" id="sheet-2">
+          <div class="page-face front">
+            <div class="page-content photo-page">
+              <div class="photo-frame landscape-frame">
+                <img src="images/DSC_5169.webp" alt="Ancient Beech Forest" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Ancient Beech Forest</h3>
+                <p class="meta">March 23, 2026 — 10:05 AM • NIKON Z 6_2</p>
+                <p class="desc">Tangled mossy roots and majestic trunks of the ancient Antarctic Beech (Lophozonia moorei) stand as living relics of Gondwana.</p>
+              </div>
+              <div class="page-number">4</div>
+            </div>
+          </div>
+          <div class="page-face back">
+            <div class="page-content photo-page">
+              <div class="photo-frame portrait-frame">
+                <img src="images/DSC_5176.webp" alt="Ethereal Mist" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Ethereal Mist</h3>
+                <p class="meta">March 23, 2026 — 10:05 AM • NIKON Z 6_2</p>
+                <p class="desc">A solitary tree trunk draped in soft moss rises through the cool mountain mist.</p>
+              </div>
+              <div class="page-number">5</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHEET 3: PHOTO 5 & PHOTO 6 -->
+        <div class="sheet" id="sheet-3">
+          <div class="page-face front">
+            <div class="page-content photo-page">
+              <div class="photo-frame landscape-frame">
+                <img src="images/DSC_5179.webp" alt="Gondwana Undergrowth" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Gondwana Undergrowth</h3>
+                <p class="meta">March 23, 2026 — 10:05 AM • NIKON Z 6_2</p>
+                <p class="desc">The lush undergrowth of the temperate rainforest, carpeted with ferns and liverworts.</p>
+              </div>
+              <div class="page-number">6</div>
+            </div>
+          </div>
+          <div class="page-face back">
+            <div class="page-content photo-page">
+              <div class="photo-frame portrait-frame">
+                <img src="images/DSC_5182.webp" alt="Mountain Ferns" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Mountain Ferns</h3>
+                <p class="meta">March 23, 2026 — 10:05 AM • NIKON Z 6_2</p>
+                <p class="desc">Delicate fronds of mountain ferns capture the morning moisture in the deep shade of the canopy.</p>
+              </div>
+              <div class="page-number">7</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHEET 4: PHOTO 7 & PHOTO 8 -->
+        <div class="sheet" id="sheet-4">
+          <div class="page-face front">
+            <div class="page-content photo-page">
+              <div class="photo-frame portrait-frame">
+                <img src="images/DSC_5185.webp" alt="Lichen and Bark" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Lichen and Bark</h3>
+                <p class="meta">March 23, 2026 — 10:06 AM • NIKON Z 6_2</p>
+                <p class="desc">A close-up of the textured bark of a rainforest giant, covered in white and green lichens.</p>
+              </div>
+              <div class="page-number">8</div>
+            </div>
+          </div>
+          <div class="page-face back">
+            <div class="page-content photo-page">
+              <div class="photo-frame landscape-frame">
+                <img src="images/DSC_5187.webp" alt="Sunbeams through the Canopy" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Sunbeams through the Canopy</h3>
+                <p class="meta">March 23, 2026 — 10:06 AM • NIKON Z 6_2</p>
+                <p class="desc">Rays of morning light break through the dense foliage, illuminating the forest floor.</p>
+              </div>
+              <div class="page-number">9</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHEET 5: PHOTO 9 & PHOTO 10 -->
+        <div class="sheet" id="sheet-5">
+          <div class="page-face front">
+            <div class="page-content photo-page">
+              <div class="photo-frame landscape-frame">
+                <img src="images/DSC_5195.webp" alt="Forest Silence" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Forest Silence</h3>
+                <p class="meta">March 23, 2026 — 10:06 AM • NIKON Z 6_2</p>
+                <p class="desc">The quiet stillness of the Barrington forest, where the only sound is the rustle of leaves and distant bird calls.</p>
+              </div>
+              <div class="page-number">10</div>
+            </div>
+          </div>
+          <div class="page-face back">
+            <div class="page-content photo-page">
+              <div class="photo-frame landscape-frame">
+                <img src="images/DSC_5207.webp" alt="Mountain Vista" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Mountain Vista</h3>
+                <p class="meta">March 24, 2026 — 8:23 AM • NIKON Z 6_2</p>
+                <p class="desc">A crisp, clear morning reveals the vast, undulating ridges and deep valleys of the Barrington wilderness.</p>
+              </div>
+              <div class="page-number">11</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHEET 6: PHOTO 11 & PHOTO 12 -->
+        <div class="sheet" id="sheet-6">
+          <div class="page-face front">
+            <div class="page-content photo-page">
+              <div class="photo-frame panorama-frame">
+                <img src="images/DSC_5228.webp" alt="Wilderness Horizon" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Wilderness Horizon</h3>
+                <p class="meta">March 24, 2026 — 12:30 PM • NIKON Z 6_2</p>
+                <p class="desc">A spectacular panoramic view stretching across the ancient caldera, showcasing the endless layers of ridges.</p>
+              </div>
+              <div class="page-number">12</div>
+            </div>
+          </div>
+          <div class="page-face back">
+            <div class="page-content photo-page">
+              <div class="photo-frame portrait-frame">
+                <img src="images/DSC_5246.webp" alt="The Lookout Path" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>The Lookout Path</h3>
+                <p class="meta">March 24, 2026 — 2:20 PM • NIKON Z 6_2</p>
+                <p class="desc">A narrow track leading towards the cliff edge, framed by subalpine eucalypts.</p>
+              </div>
+              <div class="page-number">13</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHEET 7: PHOTO 13 & EXIF -->
+        <div class="sheet" id="sheet-7">
+          <div class="page-face front">
+            <div class="page-content photo-page">
+              <div class="photo-frame portrait-frame">
+                <img src="images/DSC_5250.webp" alt="Antarctic Beech Silhouette" class="photo-img">
+              </div>
+              <div class="photo-caption">
+                <h3>Antarctic Beech Silhouette</h3>
+                <p class="meta">March 24, 2026 — 2:22 PM • NIKON Z 6_2</p>
+                <p class="desc">The dramatic silhouette of an ancient beech branch reaching out against a soft sky.</p>
+              </div>
+              <div class="page-number">14</div>
+            </div>
+          </div>
+          <div class="page-face back tech-face">
+            <div class="page-content text-page">
+              <span class="chapter-number">TECHNICAL DATA</span>
+              <h2 class="page-title">EXIF Specifications</h2>
+              <div class="title-underline"></div>
+              
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <span class="tech-label">Camera</span>
+                  <span class="tech-val">Nikon Z 6_2 Mirrorless</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-label">Format</span>
+                  <span class="tech-val">High-fidelity WebP</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-label">Image Resolution</span>
+                  <span class="tech-val">6064 x 4040 max px</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-label">Geocoding</span>
+                  <span class="tech-val">Barrington Tops, NSW</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-label">Location Area</span>
+                  <span class="tech-val">Polblue & Barrington Tops NP</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-label">Captured Range</span>
+                  <span class="tech-val">March 21 - 24, 2026</span>
+                </div>
+              </div>
+
+              <p class="tech-p">
+                This digital layout arranges the photographs in a chronological walk. The high resolution captures preserve the fine texture of moss, bark, and distant trees, providing an immersive gaze into the high-altitude forests of the region.
+              </p>
+              
+              <div class="page-number">15</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHEET 8: CREDITS & BACK COVER -->
+        <div class="sheet" id="sheet-8">
+          <div class="page-face front credits-face">
+            <div class="page-content text-page">
+              <span class="chapter-number">CREDITS</span>
+              <h2 class="page-title">Closing Notes</h2>
+              <div class="title-underline"></div>
+              <p class="credits-p">
+                All photographs in this volume were captured by <strong>Neil Bacon</strong>. The collection was curated and structured into this dynamic web layout with the assistance of <strong>Gemini</strong>.
+              </p>
+              <p class="credits-p">
+                The Gondwana Rainforests of Australia include the most extensive areas of subtropical rainforest in the world. Barrington Tops represents the southern limit of this World Heritage property.
+              </p>
+              <div class="credits-closing">
+                <p>Thank you for exploring.</p>
+                <div class="credits-logo">NB</div>
+              </div>
+              <div class="page-number">16</div>
+            </div>
+          </div>
+          <div class="page-face back cover-face back-cover">
+            <div class="cover-pattern"></div>
+            <div class="cover-content">
+              <div class="back-logo">B</div>
+              <div class="back-footer">BARRINGTON TOPS • VOL 1</div>
+            </div>
+            <div class="spine-shading"></div>
+          </div>
+        </div>
+
+      </div> <!-- /book -->
+    </div> <!-- /book-wrapper -->
+  </main>
+
+  <!-- Controls overlay -->
+  <div class="controls-overlay">
+    <div class="slider-container">
+      <span class="scrub-label">Cover</span>
+      <input type="range" id="page-scrubber" min="0" max="8" value="0" class="scrubber">
+      <span class="scrub-label">Back Cover</span>
+    </div>
+    
+    <div class="bottom-bar">
+      <button id="prev-btn" class="control-btn" title="Previous Page (Left Arrow)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        <span>Previous</span>
+      </button>
+
+      <div class="page-indicator">
+        <span id="current-spread">Cover</span>
+        <span class="indicator-divider">/</span>
+        <span class="total-pages">Spread 1-8</span>
+      </div>
+
+      <button id="play-btn" class="control-btn" title="Toggle Auto Slideshow">
+        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span id="play-text">Autoplay</span>
+      </button>
+
+      <button id="next-btn" class="control-btn" title="Next Page (Right Arrow)">
+        <span>Next</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Lightbox for Image Zoom -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-close">&times;</div>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Zoomed view">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
