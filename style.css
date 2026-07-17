@@ -505,55 +505,6 @@ body {
   padding: 12px;
 }
 
-/* Double-Page Spread Styles */
-.double-spread-page {
-  padding: 0 !important;
-  margin: 0 !important;
-  display: block;
-}
-
-.double-spread-frame {
-  background-color: #ffffff;
-  padding: 0;
-  margin: 0;
-  box-shadow: none;
-  border-radius: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: zoom-in;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.double-spread-frame.left-half .photo-img {
-  width: 200%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left center;
-}
-
-.double-spread-frame.right-half .photo-img {
-  width: 200%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right center;
-}
-
-.double-spread-page .photo-caption {
-  position: absolute;
-  bottom: 40px;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0 40px;
-  z-index: 5;
-}
-
 .photo-caption {
   width: 100%;
   margin-top: 24px;
